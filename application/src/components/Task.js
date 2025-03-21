@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare, faTrash, faCheckSquare } from '@fortawesome/free-solid-svg-icons'
 
-export const ToDo = ({ task, deleteTask, editTask, toggleComplete }) => {
+export const Task = ({ task, deleteTask, editTask, toggleComplete }) => {
     return (
         <div className="ToDo">
             <p className={`${task.completed ? "completed" : "incompleted"}`} onClick={() => toggleComplete(task.id)}>{task.task}</p>

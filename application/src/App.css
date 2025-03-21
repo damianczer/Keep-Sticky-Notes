@@ -8,7 +8,7 @@
 }
 
 body {
-    background: #2a2c2a;
+    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,16 +19,17 @@ body {
 }
 
 h1 {
-    color: #d8d5d5;
+    color: #000000;
     margin-bottom: 0.5rem;
     font-size: 1.75rem;
 }
 
 .ToDoWrapper {
-    background: #494d4a;
+    background: #ffffff;
     margin-top: 5rem;
     padding: 2rem;
     border-radius: 5px;
+    box-shadow: 0 0 4px #7e7e7e;
 }
 
 .ToDoForm {
@@ -39,13 +40,13 @@ h1 {
 .ToDo-input {
     outline: none;
     background: none;
-    border: 1px solid #727572;
+    border: 1px solid #747474;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
     width: 600px;
-    color: #b4b0b0;
+    color: #000000;
 }
 
 .ToDo-input::placeholder {
@@ -53,8 +54,8 @@ h1 {
 }
 
 .ToDo-btn {
-    background: #30352f;
-    color: #ccc8c8;
+    background: #42a716;
+    color: #ffffff;
     border: none;
     padding: 0.55rem;
     cursor: pointer;
@@ -63,18 +64,19 @@ h1 {
 }
 
 .ToDo-btn:hover {
-    background: #2e312e;
+    background: #1b960b;
 }
 
 .ToDo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #7a7272;
+    background: #ffffff;
     color: #dbd6d6;
     padding: 0.75rem 1rem;
     border-radius: 5px;
     margin-bottom: 1rem;
+    box-shadow: 0 0 4px #7e7e7e;
 }
 
 .fa-trash,
@@ -83,7 +85,7 @@ h1 {
 }
 
 .incompleted {
-    color: #d3cbcb;
+    color: #000000;
     cursor: pointer;
 }
 
@@ -100,23 +102,23 @@ h1 {
 }
 
 .delete-icon {
-    color: #753636;
+    color: #ff0000;
 }
 
 .done-icon {
-    color: #3b5a33;
+    color: #35ce0e;
 }
 
 .edit-icon {
-    color: #242423;
+    color: #8a8a8a;
 }
 
 .delete-icon:hover {
-    color: #8a3b3b;
+    color: #b30000;
 }
 
 .done-icon:hover {
-    color: #486e3e;
+    color: #1c8a00;
 }
 
 .edit-icon:hover {
