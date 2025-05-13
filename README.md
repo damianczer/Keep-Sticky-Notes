@@ -40,7 +40,7 @@ A very simple and quick app for your daily to-do list. Manage your tasks efficie
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/to-do.git
+   git clone https://github.com/damianczer/to-do.git
    ```
 2. Navigate to the project directory:
    ```bash
