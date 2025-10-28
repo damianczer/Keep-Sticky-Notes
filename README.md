@@ -1,23 +1,17 @@
 <div align="center">
 
-# 📝 React To-Do Application
+# To Do Application
 
-*A modern, intuitive task management solution built with React*
+*A modern, intuitive task management solution built with React.js*
 
 [![GitHub stars](https://img.shields.io/github/stars/damianczer/to-do?style=for-the-badge&color=gold)](https://github.com/damianczer/to-do/stargazers)
 [![GitHub watchers](https://img.shields.io/github/watchers/damianczer/to-do?style=for-the-badge&color=blue)](https://github.com/damianczer/to-do/watchers)
 [![GitHub issues](https://img.shields.io/github/issues/damianczer/to-do?style=for-the-badge&color=red)](https://github.com/damianczer/to-do/issues)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://www.damianczerwinski.pl/to-do/)
 
-![Project Preview](https://github.com/user-attachments/assets/adab0769-a7ed-49de-a6be-80c2c5195d9e)
-
-[View Live Demo](https://www.damianczerwinski.pl/to-do/) • [Report Bug](https://github.com/damianczer/to-do/issues) • [Request Feature](https://github.com/damianczer/to-do/issues)
-
 </div>
 
----
-
-## � Overview
+## 🔍 Overview
 
 A sleek, responsive to-do application that helps you organize your daily tasks with ease. Built with modern React patterns and featuring an intuitive user interface, this application demonstrates clean architecture and best practices in frontend development.
 
@@ -29,7 +23,6 @@ A sleek, responsive to-do application that helps you organize your daily tasks w
 - **🔄 Real-time Updates** - Instant task management without page refreshes
 - **♿ Accessible** - Built with accessibility best practices
 
----
 
 ## 🛠️ Technology Stack
 
@@ -44,9 +37,19 @@ A sleek, responsive to-do application that helps you organize your daily tasks w
 
 </div>
 
----
+## 📱 Preview
 
-## � Features
+<div align="center">
+
+*I encourage you to preview the application live.*
+  
+![Project Preview](https://github.com/user-attachments/assets/adab0769-a7ed-49de-a6be-80c2c5195d9e)
+
+[View Live Demo](https://www.damianczerwinski.pl/to-do/) • [Report Bug](https://github.com/damianczer/to-do/issues) • [Request Feature](https://github.com/damianczer/to-do/issues)
+
+</div>
+
+## 🧑🏻‍💻 Features
 
 <table>
 <tr>
@@ -71,9 +74,7 @@ A sleek, responsive to-do application that helps you organize your daily tasks w
 </tr>
 </table>
 
----
-
-## � Installation & Setup
+##  ⚒️ Installation & Setup
 
 ### Prerequisites
 - Node.js (v16.0.0 or higher)
@@ -106,8 +107,6 @@ npm run build
 # The build folder will contain optimized files ready for deployment
 ```
 
----
-
 ## 📁 Project Structure
 
 ```
@@ -129,8 +128,6 @@ to-do/
 └── LICENSE                     # License information
 ```
 
----
-
 ## 🔧 Available Scripts
 
 | Command | Description |
@@ -140,32 +137,13 @@ to-do/
 | `npm test` | Launches the test runner |
 | `npm run eject` | Ejects from Create React App |
 
----
-
 ## 🌐 Browser Support
 
 | Chrome | Firefox | Safari | Edge |
 |--------|---------|---------|------|
 | ✅ Latest | ✅ Latest | ✅ Latest | ✅ Latest |
 
----
-
-## 👨‍💻 Author
-
-<div align="center">
-
-**Damian Czerwiński**
-
-[![GitHub](https://img.shields.io/badge/GitHub-damianczer-black?style=flat-square&logo=github)](https://github.com/damianczer)
-[![Website](https://img.shields.io/badge/Website-damianczerwinski.pl-blue?style=flat-square&logo=google-chrome)](https://www.damianczerwinski.pl)
-
-*Passionate Frontend Developer focused on creating exceptional user experiences*
-
-</div>
-
----
-
-## � License
+## 📜 License
 
 ```
 Copyright (c) 2025 Damian Czerwiński
@@ -174,15 +152,15 @@ This project is copyrighted and proprietary. Unauthorized use, distribution,
 or modification is strictly prohibited without explicit written permission 
 from the author.
 
-For licensing inquiries, please contact: damian@damianczerwinski.pl
+For licensing inquiries, please contact: kontakt@damianczerwinski.pl
 ```
-
----
 
 <div align="center">
 
 **⭐ Star this repository if you found it helpful!**
 
 Made with ❤️ by [Damian Czerwiński](https://github.com/damianczer)
+
+*Passionate Frontend Developer focused on creating exceptional user experiences*
 
 </div>
