@@ -20,7 +20,7 @@ const getCookie = (name) => {
 export const useTheme = () => {
     const [theme, setTheme] = useState(() => {
         const savedTheme = getCookie('dc_keep_sticky_notes_settings');
-        return savedTheme || 'dark';
+        return savedTheme || 'light';
     });
 
     useEffect(() => {

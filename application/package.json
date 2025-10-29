@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Damian Czerwiński",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
