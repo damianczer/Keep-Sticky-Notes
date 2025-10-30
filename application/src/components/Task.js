@@ -13,13 +13,15 @@ const Task = ({ task, deleteTask, editTask, toggleComplete, updateTaskColor }) =
     };
 
     return (
-        <div className="note-item">
+        <article className="note-item">
             <div className={`note-card ${task.color}`}>
                 <div className="note-content">
-                    {task.title && (
-                        <h3 className="note-title">
+                    {task.title ? (
+                        <h2 className="note-title">
                             {task.title}
-                        </h3>
+                        </h2>
+                    ) : (
+                        <h2 className="note-title visually-hidden">Untitled Note</h2>
                     )}
                     {task.task && (
                         <p className={`note-text ${task.completed ? 'completed' : ''}`}>
@@ -30,46 +32,58 @@ const Task = ({ task, deleteTask, editTask, toggleComplete, updateTaskColor }) =
 
                 <div className="note-actions">
                     <div className="color-picker-container" style={{ position: 'relative' }}>
-                        <FontAwesomeIcon
-                            className="action-icon"
-                            icon={faPalette}
+                        <button
+                            className="icon-btn"
                             onClick={() => setShowColorPicker(!showColorPicker)}
-                            title="Change color"
-                        />
+                            aria-expanded={showColorPicker}
+                            aria-haspopup="true"
+                            aria-label="Change color"
+                            type="button"
+                        >
+                            <FontAwesomeIcon className="action-icon" icon={faPalette} />
+                        </button>
                         {showColorPicker && (
                             <div className="color-picker-dropdown">
                                 {NOTE_COLORS.map((colorClass) => (
-                                    <div
+                                    <button
                                         key={colorClass}
+                                        type="button"
                                         className={`color-option-small ${colorClass}`}
                                         onClick={() => handleColorChange(colorClass)}
-                                        title={colorClass}
+                                        aria-label={`Select ${colorClass} color`}
                                     />
                                 ))}
                             </div>
                         )}
                     </div>
-                    <FontAwesomeIcon
-                        className="action-icon complete"
-                        icon={faCheck}
+                    <button
+                        className="icon-btn"
                         onClick={() => toggleComplete(task.id)}
-                        title={task.completed ? 'Mark as incomplete' : 'Mark as complete'}
-                    />
-                    <FontAwesomeIcon
-                        className="action-icon edit"
-                        icon={faPen}
+                        aria-pressed={task.completed}
+                        aria-label={task.completed ? 'Mark as incomplete' : 'Mark as complete'}
+                        type="button"
+                    >
+                        <FontAwesomeIcon className="action-icon complete" icon={faCheck} />
+                    </button>
+                    <button
+                        className="icon-btn"
                         onClick={() => editTask(task.id)}
-                        title="Edit note"
-                    />
-                    <FontAwesomeIcon
-                        className="action-icon delete"
-                        icon={faTrash}
+                        aria-label="Edit note"
+                        type="button"
+                    >
+                        <FontAwesomeIcon className="action-icon edit" icon={faPen} />
+                    </button>
+                    <button
+                        className="icon-btn"
                         onClick={() => deleteTask(task.id)}
-                        title="Delete note"
-                    />
+                        aria-label="Delete note"
+                        type="button"
+                    >
+                        <FontAwesomeIcon className="action-icon delete" icon={faTrash} />
+                    </button>
                 </div>
             </div>
-        </div>
+        </article>
     );
 };
 

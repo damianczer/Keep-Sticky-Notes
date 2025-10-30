@@ -9,9 +9,13 @@ const NoteModal = ({ isOpen, onClose, onSave, note = null, mode = MODAL_MODE.ADD
     const [noteText, setNoteText] = useState('');
     const [selectedColor, setSelectedColor] = useState(DEFAULT_NOTE_COLOR);
     const titleInputRef = useRef(null);
+    const previousActiveElementRef = useRef(null);
+    const modalContentRef = useRef(null);
 
     useEffect(() => {
         if (isOpen) {
+            previousActiveElementRef.current = document.activeElement;
+
             if (mode === MODAL_MODE.EDIT && note) {
                 setNoteTitle(note.title || '');
                 setNoteText(note.task || '');
@@ -21,13 +25,51 @@ const NoteModal = ({ isOpen, onClose, onSave, note = null, mode = MODAL_MODE.ADD
                 setNoteText('');
                 setSelectedColor(DEFAULT_NOTE_COLOR);
             }
+
+            setTimeout(() => {
+                if (titleInputRef.current) {
+                    titleInputRef.current.focus();
+                }
+            }, 0);
+        } else {
+            if (previousActiveElementRef.current && previousActiveElementRef.current.focus) {
+                previousActiveElementRef.current.focus();
+            }
         }
     }, [isOpen, mode, note?.id]);
 
     useEffect(() => {
-        if (isOpen && titleInputRef.current) {
-            titleInputRef.current.focus();
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                handleClose();
+            }
+
+            if (e.key === 'Tab' && modalContentRef.current) {
+                const focusableElements = modalContentRef.current.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+
+                if (e.shiftKey && document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                } else if (!e.shiftKey && document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        };
+
+        if (isOpen) {
+            window.addEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = 'hidden';
         }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = '';
+        };
     }, [isOpen]);
 
     const handleSubmit = (e) => {
@@ -72,9 +114,16 @@ const NoteModal = ({ isOpen, onClose, onSave, note = null, mode = MODAL_MODE.ADD
 
     return (
         <div className="modal-overlay" onClick={handleOverlayClick}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div
+                ref={modalContentRef}
+                className="modal-content"
+                onClick={(e) => e.stopPropagation()}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-title"
+            >
                 <div className="modal-header">
-                    <h3>{modalTitle}</h3>
+                    <h3 id="modal-title">{modalTitle}</h3>
                     <button
                         className="modal-close-btn"
                         onClick={handleClose}
@@ -87,7 +136,9 @@ const NoteModal = ({ isOpen, onClose, onSave, note = null, mode = MODAL_MODE.ADD
 
                 <form onSubmit={handleSubmit} className="modal-form">
                     <div className="note-input-container">
+                        <label htmlFor="note-title" className="visually-hidden">Note title</label>
                         <input
+                            id="note-title"
                             type="text"
                             ref={titleInputRef}
                             value={noteTitle}
@@ -95,7 +146,9 @@ const NoteModal = ({ isOpen, onClose, onSave, note = null, mode = MODAL_MODE.ADD
                             placeholder="Note title"
                             className="modal-note-title"
                         />
+                        <label htmlFor="note-text" className="visually-hidden">Note text</label>
                         <textarea
+                            id="note-text"
                             value={noteText}
                             onChange={(e) => setNoteText(e.target.value)}
                             placeholder="Take a note..."
@@ -112,7 +165,7 @@ const NoteModal = ({ isOpen, onClose, onSave, note = null, mode = MODAL_MODE.ADD
                                 className={`color-option ${colorClass} ${selectedColor === colorClass ? 'selected' : ''
                                     }`}
                                 onClick={() => setSelectedColor(colorClass)}
-                                aria-label={`Select ${colorClass}`}
+                                aria-label={`Select ${colorClass} color`}
                             />
                         ))}
                     </div>
