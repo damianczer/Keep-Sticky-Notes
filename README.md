@@ -13,9 +13,6 @@
 
 </div>
 
-<<<<<<< Updated upstream
----
-=======
 ## 📊 Performance & Quality Metrics
 
 <div align="center">
@@ -32,9 +29,6 @@
 
 **WAVE Accessibility Test:** Zero errors, Zero contrast errors, Full WCAG 2.1 AA compliance 
 
-
->>>>>>> Stashed changes
-
 ## 🔍 Overview
 
 **Keep Sticky Notes** is a sophisticated, feature-rich note-taking application that combines the simplicity of sticky notes with the power of modern web technologies. Inspired by Google Keep's elegant design philosophy, this application delivers a seamless experience for capturing, organizing, and managing your thoughts across all devices.
@@ -46,11 +40,9 @@
 - **🎨 11 Color Palettes** - Each note can be customized with 11 beautiful color themes
 - **📱 Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - **⚡ Lightning Fast** - Built with React 19 and optimized performance
-- **� Auto-Save** - Automatic sessionStorage persistence for your notes
+- **📝 Auto-Save** - Automatic sessionStorage persistence for your notes
 - **♿ Accessible** - WCAG compliant with semantic HTML and ARIA labels
 - **🔒 Privacy-First** - All data stored locally in your browser
-
----
 
 ## 🛠️ Technology Stack
 
@@ -68,30 +60,21 @@
 
 </div>
 
-<<<<<<< Updated upstream
----
-=======
-### Development Tools
-
-- **@craco/craco** `^7.1.0` - Custom webpack configuration
-- **compression-webpack-plugin** `^11.1.0` - Gzip/Brotli compression
-- **terser-webpack-plugin** - JavaScript minification
-- **css-minimizer-webpack-plugin** - CSS optimization
->>>>>>> Stashed changes
-
 ## 📱 Preview
 
 <div align="center">
 
 *Experience the application in action with both light and dark themes.*
   
-![Project Preview](https://github.com/user-attachments/assets/adab0769-a7ed-49de-a6be-80c2c5195d9e)
+<img width="1635" height="788" alt="image" src="https://github.com/user-attachments/assets/66f3be33-0813-4e98-84ae-168f213278e4" />
 
-[🚀 View Live Demo](https://www.damianczerwinski.pl/to-do/) • [🐛 Report Bug](https://github.com/damianczer/to-do/issues) • [💡 Request Feature](https://github.com/damianczer/to-do/issues)
+<img width="1890" height="911" alt="image" src="https://github.com/user-attachments/assets/4f639860-bca7-4c3b-a8b4-6647ed936a60" />
+
+<img width="1901" height="918" alt="image" src="https://github.com/user-attachments/assets/ca276a73-ad39-4d59-ac55-c6148adc11d8" />
+
+[🚀 View Live Demo](https://www.damianczerwinski.pl/keep-sticky-notes/)
 
 </div>
-
----
 
 ## 🧑🏻‍💻 Features
 
@@ -112,7 +95,7 @@
 ### 🎯 User Experience
 - 🌓 **Dark/Light Mode** - Toggle between themes with persistent settings
 - 🎨 **Masonry Layout** - Pinterest-style responsive grid
-- � **Mobile First** - Optimized touch interactions
+- 📱 **Mobile First** - Optimized touch interactions
 - ⚡ **Instant Feedback** - Real-time UI updates
 - 💾 **Auto-Save** - Never lose your notes
 - 🔍 **SEO Optimized** - Professional meta tags
@@ -144,8 +127,6 @@
 </tr>
 </table>
 
----
-
 ## 🎨 Theme System
 
 The application features a sophisticated dual-theme system with automatic color adaptation:
@@ -163,8 +144,6 @@ The application features a sophisticated dual-theme system with automatic color 
 **Color Palettes:**
 - 🟡 Yellow • 🔴 Red • 🟣 Purple • 🔵 Blue • 🟢 Green • 🟠 Orange
 - 🩷 Pink • 🩵 Cyan • 🟤 Brown • ⚫ Gray • ⚪ White
-
----
 
 ##  ⚒️ Installation & Setup
 
@@ -219,8 +198,6 @@ The application uses increased memory allocation for optimal development experie
 }
 ```
 
----
-
 ## 📁 Project Architecture
 
 ```
@@ -273,9 +250,6 @@ keep-sticky-notes/
 └── README.md                       # This file
 ```
 
-<<<<<<< Updated upstream
----
-=======
 ### Architecture Highlights
 
 - **Modular CSS**: 8 separate CSS files for maintainability
@@ -469,7 +443,6 @@ Sitemap: https://www.damianczerwinski.pl/keep-sticky-notes/sitemap.xml
 - ✅ **Canonical URL** - Prevents duplicate content issues
 - ✅ **Semantic HTML5** - Better crawling and indexing
 - ✅ **Responsive Images** - Proper sizing and formats
->>>>>>> Stashed changes
 
 ## 🔧 Available Scripts
 
@@ -479,46 +452,6 @@ Sitemap: https://www.damianczerwinski.pl/keep-sticky-notes/sitemap.xml
 | `npm run build` | Production-optimized build | Deployment preparation |
 | `npm test` | Run test suite | Quality assurance |
 | `npx serve -s build -l 3000` | Preview production build | Pre-deployment testing |
-
----
-
-## 🎯 Development Journey
-
-This application has undergone significant evolution from a basic to-do list to a sophisticated note-taking platform:
-
-### Phase 1: Foundation (Initial Release)
-- Basic task management functionality
-- Simple CRUD operations
-- Mobile-responsive design
-
-### Phase 2: Google Keep Redesign
-- Complete UI overhaul inspired by Google Keep
-- Masonry grid layout implementation
-- Floating action button (FAB) pattern
-- Unified modal system replacing separate add/edit forms
-
-### Phase 3: Advanced Theming
-- Dark/light mode implementation
-- CSS custom properties-based theme system
-- 11 color palettes for notes
-- Automatic color adaptation per theme
-- Cookie-based theme persistence
-
-### Phase 4: Performance Optimization
-- React 19 upgrade for latest features
-- Removed infinite loop issues in useEffect hooks
-- Optimized sessionStorage persistence
-- Memory allocation improvements
-- Production build optimization (83.98 kB gzipped)
-
-### Phase 5: Professional Polish
-- SEO meta tags (Open Graph, Twitter Cards)
-- Code cleanup (removed all comments)
-- Professional documentation
-- Accessibility improvements
-- Browser compatibility testing
-
----
 
 ## 🌐 Browser Support
 
@@ -530,27 +463,6 @@ This application has undergone significant evolution from a basic to-do list to 
 | Edge | Latest 3 versions | ✅ Fully Supported |
 | Mobile Safari | iOS 12+ | ✅ Fully Supported |
 | Chrome Mobile | Android 8+ | ✅ Fully Supported |
-
----
-
-## � Deployment
-
-The application is production-ready and can be deployed to any static hosting service:
-
-### Recommended Platforms
-- **Vercel** - Zero-config deployment
-- **Netlify** - Continuous deployment from Git
-- **GitHub Pages** - Free hosting for public repos
-- **AWS S3 + CloudFront** - Enterprise-grade hosting
-- **Traditional Web Hosting** - Upload `build` folder contents
-
-### Deployment Steps
-1. Run `npm run build`
-2. Upload entire `build` folder to your hosting
-3. Configure server to serve `index.html` for all routes
-4. Ensure HTTPS is enabled for optimal security
-
----
 
 ## �📜 License
 
@@ -569,34 +481,15 @@ For licensing inquiries or permission requests:
 🌐 Web: https://www.damianczerwinski.pl
 ```
 
----
-
 <div align="center">
-
-## 👨‍💻 About the Developer
-
-**Damian Czerwiński**
-
-*Passionate Frontend Developer & UI/UX Enthusiast*
-
-Specializing in creating exceptional user experiences with modern web technologies.
-Committed to clean code, performance optimization, and pixel-perfect design implementation.
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-damianczerwinski.pl-blue?style=for-the-badge)](https://www.damianczerwinski.pl)
-[![GitHub](https://img.shields.io/badge/GitHub-damianczer-black?style=for-the-badge&logo=github)](https://github.com/damianczer)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/damian-czerwi%C5%84ski-8715b7251/)
-
----
 
 ### 🤝 Contributing
 
 This is a proprietary project, but feedback and suggestions are welcome!
 
-**Found a bug?** [Open an issue](https://github.com/damianczer/to-do/issues)  
-**Have an idea?** [Request a feature](https://github.com/damianczer/to-do/issues)  
+**Found a bug?** [Open an issue](https://github.com/damianczer/keep-sticky-notes/issues)  
+**Have an idea?** [Request a feature](https://github.com/damianczer/keep-sticky-notes/issues)  
 **Like the project?** ⭐ **Star this repository!**
-
----
 
 **Made with ❤️ and ☕ by Damian Czerwiński**
 
