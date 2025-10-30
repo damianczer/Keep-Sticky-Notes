@@ -13,22 +13,6 @@
 
 </div>
 
-## 📊 Performance & Quality Metrics
-
-<div align="center">
-
-| Category | Score | Tools |
-|----------|-------|-------|
-| 🎯 **Performance** | 95+ | Google Lighthouse |
-| ♿ **Accessibility** | 100 | WAVE, Lighthouse |
-| 🎨 **Best Practices** | 100 | Lighthouse |
-| 🔍 **SEO** | 100 | Lighthouse, SEMrush |
-| 📱 **PWA Ready** | ✅ | manifest.json configured |
-
-</div>
-
-**WAVE Accessibility Test:** Zero errors, Zero contrast errors, Full WCAG 2.1 AA compliance 
-
 ## 🔍 Overview
 
 **Keep Sticky Notes** is a sophisticated, feature-rich note-taking application that combines the simplicity of sticky notes with the power of modern web technologies. Inspired by Google Keep's elegant design philosophy, this application delivers a seamless experience for capturing, organizing, and managing your thoughts across all devices.
@@ -60,21 +44,39 @@
 
 </div>
 
-</div>
-
 ## 📱 Preview
 
 <div align="center">
 
 *Experience the application in action with both light and dark themes.*
   
-<img width="1635" height="788" alt="image" src="https://github.com/user-attachments/assets/66f3be33-0813-4e98-84ae-168f213278e4" />
+<img width="1904" height="915" alt="image" src="https://github.com/user-attachments/assets/1fc25372-2c7d-4e28-83cf-ed21889c3d9f" />
 
-<img width="1890" height="911" alt="image" src="https://github.com/user-attachments/assets/4f639860-bca7-4c3b-a8b4-6647ed936a60" />
+<img width="375" height="339" alt="image" src="https://github.com/user-attachments/assets/4711348c-e3a6-4497-8492-5c2187101e84" />
 
-<img width="1901" height="918" alt="image" src="https://github.com/user-attachments/assets/ca276a73-ad39-4d59-ac55-c6148adc11d8" />
+<img width="675" height="610" alt="image" src="https://github.com/user-attachments/assets/c2c7e1f9-fb2f-452b-a0a8-0552c5826408" />
+
+<img width="717" height="626" alt="image" src="https://github.com/user-attachments/assets/ee983b1f-9003-4af0-be5d-19322024c719" />
 
 [🚀 View Live Demo](https://www.damianczerwinski.pl/keep-sticky-notes/)
+
+</div>
+
+## 📊 Performance & Quality Metrics
+
+<div align="center">
+
+| Category | Score | Tools |
+|----------|-------|-------|
+| 🎯 **Performance** | 100 | Google Lighthouse |
+| ♿ **Accessibility** | 100 | WAVE, Lighthouse |
+| 🎨 **Best Practices** | 100 | Lighthouse |
+| 🔍 **SEO** | 100 | Lighthouse, SEMrush |
+| 📱 **PWA Ready** | ✅ | manifest.json configured |
+
+**WAVE Accessibility Test:** Zero errors, Zero contrast errors, Full WCAG 2.1 AA compliance:
+
+![Zrzut ekranu 2025-10-30 114012](https://github.com/user-attachments/assets/9b3d0887-8c66-4e46-96be-98d358b598cc)
 
 </div>
 
@@ -128,24 +130,6 @@
 </td>
 </tr>
 </table>
-
-## 🎨 Theme System
-
-The application features a sophisticated dual-theme system with automatic color adaptation:
-
-### Light Mode
-- Clean, bright interface optimized for daytime use
-- 11 carefully selected pastel colors for notes
-- High contrast for excellent readability
-
-### Dark Mode
-- Eye-comfortable design for low-light environments
-- Rich, vibrant colors adapted for dark backgrounds
-- Reduced eye strain during extended use
-
-**Color Palettes:**
-- 🟡 Yellow • 🔴 Red • 🟣 Purple • 🔵 Blue • 🟢 Green • 🟠 Orange
-- 🩷 Pink • 🩵 Cyan • 🟤 Brown • ⚫ Gray • ⚪ White
 
 ##  ⚒️ Installation & Setup
 
@@ -251,14 +235,6 @@ keep-sticky-notes/
 └── README.md                       # This file
 ```
 
-### Architecture Highlights
-
-- **Modular CSS**: 8 separate CSS files for maintainability
-- **Component Separation**: Clear separation of concerns
-- **Custom Hooks**: Reusable logic (theme management)
-- **Constants Extraction**: Centralized configuration
-- **Utility Functions**: DRY principle for storage operations
-
 ## ♿ Accessibility (WCAG 2.1 AA Compliance)
 
 This application is built with accessibility as a core principle, achieving **100% WCAG 2.1 Level AA compliance**.
@@ -312,14 +288,6 @@ This application is built with accessibility as a core principle, achieving **10
 - ✅ **useCallback()** - Memoized callback functions in TaskWrapper
 - ✅ **PropTypes** - Runtime type validation for all components
 - ✅ **Virtual DOM** - Efficient reconciliation and updates
-
-### CSS Optimizations
-
-- ✅ **CSS Custom Properties** - Efficient theming (11 color palettes × 2 themes)
-- ✅ **Modular CSS** - 8 separate stylesheets for better organization
-- ✅ **CSS Grid** - Modern layout engine (footer, masonry)
-- ✅ **Flexbox** - Efficient alignments and spacing
-- ✅ **Hardware Acceleration** - `transform` for smooth animations
 
 ### Caching Strategy
 
@@ -460,7 +428,7 @@ Sitemap: https://www.damianczerwinski.pl/keep-sticky-notes/sitemap.xml
 | Mobile Safari | iOS 12+ | ✅ Fully Supported |
 | Chrome Mobile | Android 8+ | ✅ Fully Supported |
 
-## �📜 License
+## 📜 License
 
 ```
 Copyright © 2025 Damian Czerwiński
