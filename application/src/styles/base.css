@@ -10,10 +10,6 @@ html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-/* Ensure html/body fill the viewport to avoid unexpected scrollbars */
-html, body {
     height: 100%;
 }
 
@@ -26,8 +22,64 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     transition: background-color var(--transition-base), color var(--transition-base);
-    min-height: 100%; /* use 100% to avoid viewport height rounding issues */
-    padding-bottom: 60px; /* reserve space for fixed footer */
+    min-height: 100%;
+    padding-bottom: 60px;
+    height: 100%;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    background: var(--bg-accent, #0d6efd);
+    color: #fff;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 0.4rem;
+    margin: 0;
+    cursor: pointer;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon-btn:focus-visible {
+    outline: 2px solid var(--focus-color, #0d6efd);
+    border-radius: 4px;
 }
 
 .App {

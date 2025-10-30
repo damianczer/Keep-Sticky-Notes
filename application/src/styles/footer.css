@@ -70,9 +70,10 @@
 
 .copyright p {
     margin: 0;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    font-weight: var(--font-weight-regular);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-weight: var(--font-weight-medium);
+    opacity: 0.9;
 }
 
 .footer .theme-toggle {
@@ -133,7 +134,7 @@
     }
 
     .copyright p {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 
     .footer .theme-btn {

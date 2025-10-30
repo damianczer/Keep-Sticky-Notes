@@ -1,0 +1,19 @@
+{
+  "short_name": "Keep Notes",
+  "name": "Keep Sticky Notes",
+  "description": "A simple and elegant note-taking app inspired by Google Keep",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0d6efd",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "utilities"],
+  "lang": "en-US"
+}

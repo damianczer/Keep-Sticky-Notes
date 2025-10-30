@@ -17,13 +17,7 @@ export const TaskWrapper = () => {
 
     useEffect(() => {
         const savedTasks = loadTasks();
-        
-        if (savedTasks) {
-            setTasks(savedTasks);
-        } else {
-            setTasks(EXAMPLE_NOTES);
-        }
-        
+        setTasks(savedTasks || EXAMPLE_NOTES);
         setIsInitialized(true);
     }, []);
 
@@ -36,7 +30,7 @@ export const TaskWrapper = () => {
             completed: false,
             color: finalColor
         };
-        
+
         const newTasks = [...tasks, newTask];
         setTasks(newTasks);
         saveTasks(newTasks);
@@ -98,8 +92,9 @@ export const TaskWrapper = () => {
     return (
         <>
             <TopBar />
-            <div className="notes-container">
-                <div className="notes-masonry">
+            <main id="main" role="main" tabIndex="-1">
+                <div className="notes-container">
+                    <div className="notes-masonry">
                     {tasks.map((task) => (
                         <Task
                             task={task}
@@ -110,8 +105,9 @@ export const TaskWrapper = () => {
                             updateTaskColor={updateTaskColor}
                         />
                     ))}
+                    </div>
                 </div>
-            </div>
+            </main>
             <FloatingActionButton onClick={handleOpenModal} />
 
             <NoteModal
