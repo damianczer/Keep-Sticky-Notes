@@ -1,35 +1,25 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, memo } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { NOTE_COLORS, DEFAULT_NOTE_COLOR, MODAL_MODE } from '../constants';
 
-const colorClasses = [
-    'note-color-1', 'note-color-2', 'note-color-3', 'note-color-4', 
-    'note-color-5', 'note-color-6', 'note-color-7', 'note-color-8', 
-    'note-color-9', 'note-color-10', 'note-color-11'
-];
-
-function NoteModal({ 
-    isOpen, 
-    onClose, 
-    onSave, 
-    note = null,
-    mode = 'add'
-}) {
+const NoteModal = ({ isOpen, onClose, onSave, note = null, mode = MODAL_MODE.ADD }) => {
     const [noteTitle, setNoteTitle] = useState('');
     const [noteText, setNoteText] = useState('');
-    const [selectedColor, setSelectedColor] = useState('note-color-1');
+    const [selectedColor, setSelectedColor] = useState(DEFAULT_NOTE_COLOR);
     const titleInputRef = useRef(null);
 
     useEffect(() => {
         if (isOpen) {
-            if (mode === 'edit' && note) {
+            if (mode === MODAL_MODE.EDIT && note) {
                 setNoteTitle(note.title || '');
                 setNoteText(note.task || '');
-                setSelectedColor(note.color || 'note-color-1');
+                setSelectedColor(note.color || DEFAULT_NOTE_COLOR);
             } else {
                 setNoteTitle('');
                 setNoteText('');
-                setSelectedColor('note-color-1');
+                setSelectedColor(DEFAULT_NOTE_COLOR);
             }
         }
     }, [isOpen, mode, note?.id]);
@@ -42,8 +32,9 @@ function NoteModal({
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         if (noteTitle.trim() || noteText.trim()) {
-            if (mode === 'edit' && note) {
+            if (mode === MODAL_MODE.EDIT && note) {
                 onSave({
                     id: note.id,
                     title: noteTitle.trim(),
@@ -59,33 +50,41 @@ function NoteModal({
     };
 
     const handleClose = () => {
-        if (mode === 'add') {
+        if (mode === MODAL_MODE.ADD) {
             setNoteTitle('');
             setNoteText('');
-            setSelectedColor('note-color-1');
+            setSelectedColor(DEFAULT_NOTE_COLOR);
         }
         onClose();
     };
 
+    const handleOverlayClick = (e) => {
+        if (e.target === e.currentTarget) {
+            handleClose();
+        }
+    };
+
     if (!isOpen) return null;
 
-    const modalTitle = mode === 'edit' ? 'Edit Note' : 'Add New Note';
-    const submitButtonText = mode === 'edit' ? 'Save Changes' : 'Add Note';
+    const modalTitle = mode === MODAL_MODE.EDIT ? 'Edit Note' : 'Add New Note';
+    const submitButtonText = mode === MODAL_MODE.EDIT ? 'Save Changes' : 'Add Note';
+    const isFormValid = noteTitle.trim() || noteText.trim();
 
     return (
-        <div className="modal-overlay" onClick={handleClose}>
+        <div className="modal-overlay" onClick={handleOverlayClick}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-header">
                     <h3>{modalTitle}</h3>
-                    <button 
+                    <button
                         className="modal-close-btn"
                         onClick={handleClose}
                         aria-label="Close modal"
+                        type="button"
                     >
                         <FontAwesomeIcon icon={faTimes} />
                     </button>
                 </div>
-                
+
                 <form onSubmit={handleSubmit} className="modal-form">
                     <div className="note-input-container">
                         <input
@@ -100,46 +99,58 @@ function NoteModal({
                             value={noteText}
                             onChange={(e) => setNoteText(e.target.value)}
                             placeholder="Take a note..."
-                            className="modal-note-input"
-                            rows={4}
+                            className="modal-note-text"
+                            rows={6}
                         />
                     </div>
 
-                    <div className="modal-form-actions">
-                        <div className="color-selector">
-                            <span className="color-label">Color:</span>
-                            {colorClasses.map((colorClass, index) => (
-                                <button
-                                    key={colorClass}
-                                    type="button"
-                                    className={`color-option ${colorClass} ${selectedColor === colorClass ? 'selected' : ''}`}
-                                    onClick={() => setSelectedColor(colorClass)}
-                                    aria-label={`Select color ${index + 1}`}
-                                />
-                            ))}
-                        </div>
+                    <div className="color-selector">
+                        {NOTE_COLORS.map((colorClass) => (
+                            <button
+                                key={colorClass}
+                                type="button"
+                                className={`color-option ${colorClass} ${selectedColor === colorClass ? 'selected' : ''
+                                    }`}
+                                onClick={() => setSelectedColor(colorClass)}
+                                aria-label={`Select ${colorClass}`}
+                            />
+                        ))}
+                    </div>
 
-                        <div className="modal-buttons">
-                            <button 
-                                type="button" 
-                                className="modal-cancel-btn"
-                                onClick={handleClose}
-                            >
-                                Cancel
-                            </button>
-                            <button 
-                                type="submit" 
-                                className="modal-add-btn"
-                                disabled={!noteTitle.trim() && !noteText.trim()}
-                            >
-                                {submitButtonText}
-                            </button>
-                        </div>
+                    <div className="modal-actions">
+                        <button
+                            type="button"
+                            className="modal-btn modal-btn-secondary"
+                            onClick={handleClose}
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            type="submit"
+                            className="modal-btn modal-btn-primary"
+                            disabled={!isFormValid}
+                        >
+                            {submitButtonText}
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     );
-}
+};
 
-export default NoteModal;
+NoteModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onSave: PropTypes.func.isRequired,
+    note: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        task: PropTypes.string,
+        color: PropTypes.string,
+        completed: PropTypes.bool.isRequired
+    }),
+    mode: PropTypes.oneOf([MODAL_MODE.ADD, MODAL_MODE.EDIT]).isRequired
+};
+
+export default memo(NoteModal);

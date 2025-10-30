@@ -22,9 +22,9 @@ export const EditTask = ({ editTask, task, updateTaskColor }) => {
 
     return (
         <div className="note-item">
-            <div 
+            <div
                 className={`note-card edit-mode ${task.color || 'note-color-1'}`}
-                style={{ 
+                style={{
                     minHeight: task.height || '120px'
                 }}
             >
@@ -54,8 +54,8 @@ export const EditTask = ({ editTask, task, updateTaskColor }) => {
                     <button type="button" className="save-btn-new" onClick={handleSubmit}>
                         Save
                     </button>
-                    <button 
-                        type="button" 
+                    <button
+                        type="button"
                         className="cancel-btn"
                         onClick={() => editTask(task.title, task.task, task.id)}
                     >

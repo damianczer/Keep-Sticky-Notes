@@ -1,0 +1,179 @@
+.note-card {
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    transition: background-color var(--transition-fast);
+    cursor: pointer;
+    position: relative;
+    min-height: 120px;
+    word-wrap: break-word;
+    box-shadow: var(--shadow-base);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note-card:hover {
+    background-color: var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.note-content {
+    flex: 1;
+    margin-bottom: var(--spacing-sm);
+}
+
+.note-title {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+
+.note-text {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.note-text.completed {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--spacing-xs);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    margin-top: var(--spacing-sm);
+}
+
+.note-card:hover .note-actions {
+    opacity: 1;
+}
+
+.action-icon {
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    font-size: 0.75rem;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+}
+
+.action-icon:hover {
+    background-color: var(--bg-secondary);
+    opacity: 1;
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.action-icon.complete:hover {
+    background-color: var(--success);
+    color: white;
+    border-color: var(--success);
+}
+
+.action-icon.delete:hover {
+    background-color: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
+.note-color-1 {
+    background-color: var(--note-color-1) !important;
+}
+
+.note-color-2 {
+    background-color: var(--note-color-2) !important;
+}
+
+.note-color-3 {
+    background-color: var(--note-color-3) !important;
+}
+
+.note-color-4 {
+    background-color: var(--note-color-4) !important;
+}
+
+.note-color-5 {
+    background-color: var(--note-color-5) !important;
+}
+
+.note-color-6 {
+    background-color: var(--note-color-6) !important;
+}
+
+.note-color-7 {
+    background-color: var(--note-color-7) !important;
+}
+
+.note-color-8 {
+    background-color: var(--note-color-8) !important;
+}
+
+.note-color-9 {
+    background-color: var(--note-color-9) !important;
+}
+
+.note-color-10 {
+    background-color: var(--note-color-10) !important;
+}
+
+.note-color-11 {
+    background-color: var(--note-color-11) !important;
+}
+
+.color-picker-container {
+    position: relative;
+}
+
+.color-picker-dropdown {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: var(--spacing-xs);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xs);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-dropdown);
+    animation: fadeIn var(--transition-fast);
+}
+
+.color-option-small {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-round);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+.color-option-small:hover {
+    transform: scale(1.2);
+    border-color: var(--text-primary);
+}

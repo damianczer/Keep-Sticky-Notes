@@ -1,35 +1,42 @@
 import { useState, useEffect } from 'react';
+import { STORAGE_KEYS, THEME } from '../constants';
 
-const setCookie = (name, value, days = 365) => {
+const COOKIE_EXPIRY_DAYS = 365;
+
+const setCookie = (name, value, days = COOKIE_EXPIRY_DAYS) => {
     const expires = new Date();
     expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
     document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
 };
 
 const getCookie = (name) => {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    const nameEQ = `${name}=`;
+    const cookies = document.cookie.split(';');
+
+    for (let cookie of cookies) {
+        cookie = cookie.trim();
+        if (cookie.startsWith(nameEQ)) {
+            return cookie.substring(nameEQ.length);
+        }
     }
     return null;
 };
 
 export const useTheme = () => {
     const [theme, setTheme] = useState(() => {
-        const savedTheme = getCookie('dc_keep_sticky_notes_settings');
-        return savedTheme || 'light';
+        const savedTheme = getCookie(STORAGE_KEYS.THEME);
+        return savedTheme || THEME.LIGHT;
     });
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
-        setCookie('dc_keep_sticky_notes_settings', theme);
+        setCookie(STORAGE_KEYS.THEME, theme);
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+        setTheme(prevTheme =>
+            prevTheme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT
+        );
     };
 
     return { theme, toggleTheme };

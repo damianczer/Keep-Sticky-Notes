@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --font-family-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-round: 50%;
+
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 500;
+    --z-overlay: 1000;
+    --z-modal: 2000;
+    --z-tooltip: 3000;
+
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
+
+    --border-color: #dee2e6;
+    --border-color-hover: #ced4da;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+    --accent-primary: #0d6efd;
+    --accent-hover: #0b5ed7;
+    --accent-active: #0a58ca;
+
+    --success: #198754;
+    --success-hover: #157347;
+
+    --danger: #dc3545;
+    --danger-hover: #bb2d3b;
+
+    --warning: #fd7e14;
+    --warning-hover: #e8590c;
+
+    --note-color-1: #FFD700;
+    --note-color-2: #FF6B6B;
+    --note-color-3: #4ECDC4;
+    --note-color-4: #45B7D1;
+    --note-color-5: #96CEB4;
+    --note-color-6: #FFEAA7;
+    --note-color-7: #DDA0DD;
+    --note-color-8: #FFA07A;
+    --note-color-9: #87CEEB;
+    --note-color-10: #F0E68C;
+    --note-color-11: #FFB347;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #202124;
+    --bg-secondary: #2d2e30;
+    --bg-tertiary: #3c4043;
+
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-muted: #5f6368;
+
+    --border-color: #5f6368;
+    --border-color-hover: #80868b;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+    --accent-primary: #8ab4f8;
+    --accent-hover: #aecbfa;
+    --accent-active: #c9ddfc;
+
+    --success: #81c995;
+    --success-hover: #9dd6ab;
+
+    --danger: #f28b82;
+    --danger-hover: #f5a39e;
+
+    --warning: #fdd663;
+    --warning-hover: #fde08a;
+
+    --note-color-1: #B8860B;
+    --note-color-2: #8B0000;
+    --note-color-3: #008B8B;
+    --note-color-4: #191970;
+    --note-color-5: #228B22;
+    --note-color-6: #FF8C00;
+    --note-color-7: #8B008B;
+    --note-color-8: #A0522D;
+    --note-color-9: #2F4F4F;
+    --note-color-10: #556B2F;
+    --note-color-11: #CD853F;
+}
