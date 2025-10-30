@@ -1,6 +1,6 @@
-import './App.css';
-import { TaskWrapper } from './components/TaskWrapper'
-import { Footer } from './components/Footer'
+import './styles/index.css';
+import { TaskWrapper } from './components/TaskWrapper';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
