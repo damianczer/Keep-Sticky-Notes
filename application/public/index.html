@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="theme-color" content="#0d6efd" />
-    
-    <title>Keep Sticky Notes</title>
-    <meta name="description" content="Keep Sticky Notes is a beautiful note-taking application inspired by Google Keep. Create, organize, and manage your notes with colorful sticky notes and intuitive design." />
-    <meta name="keywords" content="notes app, sticky notes, note-taking, todo list, tasks manager, productivity app, Google Keep alternative, react notes, online notepad, note organizer" />
-    <meta name="author" content="Damian Czerwiński" />
-    <meta name="robots" content="index, follow" />
-    
-    <link rel="canonical" href="https://www.damianczerwinski.pl/keep-sticky-notes/" />
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.damianczerwinski.pl/keep-sticky-notes/" />
-    <meta property="og:title" content="Keep Sticky Notes - Simple & Elegant Note-Taking App" />
-    <meta property="og:description" content="A beautiful note-taking application inspired by Google Keep. Organize your thoughts with colorful sticky notes." />
-    <meta property="og:site_name" content="Keep Sticky Notes" />
-    <meta property="og:locale" content="en_US" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Keep Sticky Notes - Simple & Elegant Note-Taking App" />
-    <meta name="twitter:description" content="A beautiful note-taking application inspired by Google Keep. Organize your thoughts with colorful sticky notes." />
-    <meta name="twitter:creator" content="@damianczer" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
-    <script type="application/ld+json">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0d6efd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#202124" media="(prefers-color-scheme: dark)" />
+
+  <title>Keep Sticky Notes</title>
+  <meta name="description"
+    content="Keep Sticky Notes is a beautiful note-taking application inspired by Google Keep. Create, organize, and manage your notes with colorful sticky notes and intuitive design. Free, simple, and elegant." />
+  <meta name="keywords"
+    content="notes app, sticky notes, note-taking, todo list, tasks manager, productivity app, Google Keep alternative, react notes, online notepad, note organizer, digital notes, sticky note app" />
+  <meta name="author" content="Damian Czerwiński" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://www.damianczerwinski.pl/keep-sticky-notes/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.damianczerwinski.pl/keep-sticky-notes/" />
+  <meta property="og:title" content="Keep Sticky Notes - Simple & Elegant Note-Taking App" />
+  <meta property="og:description"
+    content="A beautiful note-taking application inspired by Google Keep. Organize your thoughts with colorful sticky notes." />
+  <meta property="og:site_name" content="Keep Sticky Notes" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Keep Sticky Notes - Simple & Elegant Note-Taking App" />
+  <meta name="twitter:description"
+    content="A beautiful note-taking application inspired by Google Keep. Organize your thoughts with colorful sticky notes." />
+  <meta name="twitter:creator" content="@damianczer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Keep Sticky Notes",
+      "alternateName": "Keep Notes",
       "description": "A simple and elegant note-taking application inspired by Google Keep",
       "url": "https://www.damianczerwinski.pl/keep-sticky-notes/",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -46,13 +55,51 @@
       },
       "author": {
         "@type": "Person",
-        "name": "Damian Czerwiński"
+        "name": "Damian Czerwiński",
+        "url": "https://www.damianczerwinski.pl"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
       }
     }
     </script>
-  </head>
-  <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    <div id="root"></div>
-  </body>
+</head>
+
+<body>
+  <noscript>
+    <div style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+    ">
+      <h1 style="font-size: 2rem; margin-bottom: 1rem; color: #0d6efd;">Keep Sticky Notes</h1>
+      <p style="font-size: 1.1rem; margin-bottom: 1.5rem; max-width: 600px; line-height: 1.6;">
+        This application requires JavaScript to run. Please enable JavaScript in your browser settings to use Keep Sticky Notes.
+      </p>
+      <div style="background-color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 500px;">
+        <h2 style="font-size: 1.2rem; margin-bottom: 1rem; color: #202124;">How to enable JavaScript:</h2>
+        <ol style="text-align: left; line-height: 1.8; padding-left: 1.5rem;">
+          <li><strong>Chrome/Edge:</strong> Settings → Privacy and security → Site settings → JavaScript → Allowed</li>
+          <li><strong>Firefox:</strong> Type <code>about:config</code> in address bar → Search for <code>javascript.enabled</code> → Set to true</li>
+          <li><strong>Safari:</strong> Preferences → Security → Enable JavaScript</li>
+        </ol>
+      </div>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
+        For the best experience, we recommend using the latest version of Chrome, Firefox, Safari, or Edge.
+      </p>
+    </div>
+  </noscript>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div id="root"></div>
+</body>
+
 </html>
