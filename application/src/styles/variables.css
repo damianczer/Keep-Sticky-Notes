@@ -7,6 +7,7 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
 
+    --spacing-xxs: 0.125rem;
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -36,8 +37,8 @@
     --bg-tertiary: #e9ecef;
 
     --text-primary: #212529;
-    --text-secondary: #6c757d;
-    --text-muted: #adb5bd;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
 
     --border-color: #dee2e6;
     --border-color-hover: #ced4da;
@@ -81,7 +82,7 @@
 
     --text-primary: #e8eaed;
     --text-secondary: #9aa0a6;
-    --text-muted: #5f6368;
+    --text-muted: #80868b;
 
     --border-color: #5f6368;
     --border-color-hover: #80868b;

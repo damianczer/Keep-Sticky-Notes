@@ -34,7 +34,6 @@ Beautiful note-taking application inspired by Google Keep with masonry layout an
 - **Auto-Save** - Automatic sessionStorage persistence, never lose your notes
 - **Accessibility** - WCAG 2.1 AA compliant with semantic HTML and ARIA labels
 - **Mobile-First Design** - Optimized touch interactions for all devices
-- **Safari Support** - Full vendor prefix support for webkit browsers
 
 ## 📁 Project Architecture
 
@@ -50,12 +49,10 @@ Keep-Sticky-Notes/
 │   │
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── EditTask.js         # Legacy edit component (unused)
 │   │   │   ├── FloatingActionButton.js  # Material Design FAB
 │   │   │   ├── Footer.js           # Footer with social links
 │   │   │   ├── NoteModal.js        # Modal for create/edit notes
 │   │   │   ├── Task.js             # Individual note card component
-│   │   │   ├── TaskForm.js         # Legacy form component (unused)
 │   │   │   ├── TaskWrapper.js      # Main container with state
 │   │   │   └── TopBar.js           # Header with theme toggle
 │   │   │

@@ -4,7 +4,7 @@ import { NOTE_COLORS } from './index';
 export const EXAMPLE_NOTES = [
     {
         id: uuidv4(),
-        title: 'Welcome to Notes! 📜',
+        title: 'Welcome to Notes!',
         task: 'This is your first note. You can create, edit, and delete notes easily. Click the + button to add new notes!',
         completed: false,
         color: NOTE_COLORS[0]
@@ -26,7 +26,7 @@ export const EXAMPLE_NOTES = [
     {
         id: uuidv4(),
         title: 'Book Ideas',
-        task: ' 📖 Books to read:\n1. The Psychology of Design\n2. Clean Code\n3. Atomic Habits\n4. The Pragmatic Programmer\n5. Don\'t Make Me Think\n6. The Design of Everyday Things\n\nRemember to check library availability!',
+        task: 'Books to read:\n1. The Psychology of Design\n2. Clean Code\n3. Atomic Habits\n4. The Pragmatic Programmer\n5. Don\'t Make Me Think\n6. The Design of Everyday Things\n\nRemember to check library availability!',
         completed: false,
         color: NOTE_COLORS[3]
     },
@@ -47,7 +47,7 @@ export const EXAMPLE_NOTES = [
     {
         id: uuidv4(),
         title: 'Creative Ideas',
-        task: '💡 App features to consider:\n- Voice notes\n- Image attachments\n- Collaborative notes\n- Tag system\n- Search functionality\n- Export options\n- Reminder notifications\n- Color themes\n- Markdown support\n\nPriority: Start with voice notes and search!',
+        task: 'App features to consider:\n- Voice notes\n- Image attachments\n- Collaborative notes\n- Tag system\n- Search functionality\n- Export options\n- Reminder notifications\n- Color themes\n- Markdown support\n\nPriority: Start with voice notes and search!',
         completed: false,
         color: NOTE_COLORS[6]
     }

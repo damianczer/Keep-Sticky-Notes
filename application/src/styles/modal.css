@@ -1,14 +1,35 @@
 .modal-overlay {
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     z-index: var(--z-modal);
     padding: var(--spacing-xl);
+    -webkit-animation: fadeIn var(--transition-fast);
     animation: fadeIn var(--transition-fast);
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
@@ -30,31 +51,80 @@
     overflow-y: auto;
     box-shadow: var(--shadow-xl);
     border: 1px solid var(--border-color);
+    -webkit-animation: slideUp var(--transition-base);
     animation: slideUp var(--transition-base);
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-secondary) transparent;
 }
 
-@keyframes slideUp {
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: var(--radius-md);
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--text-primary);
+}
+
+[data-theme="dark"] .modal-content::-webkit-scrollbar-thumb {
+    background: #9aa0a6;
+}
+
+[data-theme="dark"] .modal-content::-webkit-scrollbar-thumb:hover {
+    background: #e8eaed;
+}
+
+@-webkit-keyframes slideUp {
     from {
+        -webkit-transform: translateY(20px);
         transform: translateY(20px);
         opacity: 0;
     }
 
     to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0);
         transform: translateY(0);
         opacity: 1;
     }
 }
 
 .modal-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-md);
-    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
 }
 
 .modal-header h3 {
-    margin: 0;
+    margin: 0 0 0 var(--spacing-sm);
     color: var(--text-primary);
     font-size: 1.5rem;
     font-weight: var(--font-weight-semibold);
@@ -69,8 +139,14 @@
     padding: var(--spacing-sm);
     border-radius: var(--radius-round);
     transition: all var(--transition-fast);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 36px;
     height: 36px;
@@ -79,6 +155,8 @@
 .modal-close-btn:hover {
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
@@ -126,7 +204,7 @@
     font-size: 1rem;
     font-family: var(--font-family-primary);
     transition: all var(--transition-fast);
-    resize: vertical;
+    resize: none;
     min-height: 150px;
     line-height: 1.6;
 }
@@ -142,10 +220,16 @@
 }
 
 .color-selector {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: var(--spacing-sm);
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: var(--spacing-lg);
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .color-option {
@@ -159,12 +243,16 @@
 }
 
 .color-option:hover {
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
     transform: scale(1.15);
     box-shadow: var(--shadow-md);
 }
 
 .color-option.selected {
     border-color: var(--text-primary);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -173,6 +261,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     color: var(--text-primary);
     font-weight: var(--font-weight-bold);
@@ -180,9 +270,13 @@
 }
 
 .modal-actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: var(--spacing-md);
-    justify-content: flex-end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .modal-btn {
@@ -203,11 +297,15 @@
 
 .modal-btn-primary:hover {
     background-color: var(--accent-hover);
+    -webkit-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
 
 .modal-btn-primary:active {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
 }
 
