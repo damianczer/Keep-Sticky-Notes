@@ -141,6 +141,11 @@
     font-size: 0.85rem;
     font-weight: var(--font-weight-medium);
     transition: all var(--transition-base);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .footer-link:hover {
@@ -215,7 +220,7 @@
         padding: var(--spacing-xs) var(--spacing-md);
         flex-direction: column;
         gap: var(--spacing-sm);
-        min-height: auto;
+        min-height: 0;
     }
 
     .copyright {
